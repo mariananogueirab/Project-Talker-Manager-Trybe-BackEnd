@@ -8,6 +8,7 @@ const validateRateAndDate = require('../middlewares/validateRateAndDate');
 const validateTalk = require('../middlewares/validateTalk');
 const getNewTalker = require('../middlewares/getNewTalker');
 const deleteTalker = require('../middlewares/deleteTalker');
+const updateTalker = require('../middlewares/updatetalker');
 
 const router = express.Router();
 
@@ -17,5 +18,8 @@ router.post(
   '/', validateToken, validateName, validateAge, validateTalk, validateRateAndDate, getNewTalker,
 );
 router.delete('/:id', validateToken, deleteTalker);
+router.put(
+  '/:id', validateToken, validateName, validateAge, validateTalk, validateRateAndDate, updateTalker,
+);
 
 module.exports = router;
