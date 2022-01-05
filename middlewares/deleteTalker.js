@@ -4,7 +4,7 @@ const setTalkers = require('../utils/setTalkers');
 const deleteTalker = (req, res) => {
   const talkers = getTalkers();
   const { id } = req.params;
-  const newTalkers = talkers.filter(({ id: idTalker }) => idTalker !== id);
+  const newTalkers = talkers.filter(({ id: idTalker }) => idTalker !== Number(id));
   setTalkers(newTalkers);
   return res.status(200).json({ message: 'Pessoa palestrante deletada com sucesso' });
 };
