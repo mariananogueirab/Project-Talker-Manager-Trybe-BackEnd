@@ -13,7 +13,9 @@ const router = express.Router();
 
 router.get('/', getAllTalkers);
 router.get('/:id', getTalkerById);
-router.post('/', validateToken, validateName, validateAge, validateTalk, validateRateAndDate, getNewTalker);
+router.post(
+  '/', validateToken, validateName, validateAge, validateTalk, validateRateAndDate, getNewTalker,
+);
 router.delete('/:id', validateToken, deleteTalker);
 
 module.exports = router;
