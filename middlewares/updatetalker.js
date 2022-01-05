@@ -6,7 +6,7 @@ const updateTalker = (req, res) => {
   const id = Number(req.params.id);
   const talkers = getTalkers();
   const newTalker = { id, name, age, talk };
-  const newTalkers = talkers.map((talker) => (talker.id === Number(id) ? newTalker : talker));
+  const newTalkers = talkers.map((talker) => (talker.id === id ? newTalker : talker));
   setTalkers(newTalkers);
   return res.status(200).json(newTalker);
 };
